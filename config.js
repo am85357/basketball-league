@@ -1,9 +1,8 @@
-// Paste the published CSV URLs for your Google Sheets tabs here.
-// Leave blank to use the built-in demo data while setting up the site.
 window.LEAGUE_CONFIG = {
-  leagueName: "LEAGUE CENTRAL",
+  leagueName: "BROWN MAMBAS TUESDAY NIGHT LEAGUE",
   seasonLabel: "2026 SEASON",
-  teamsCsvUrl: "",
-  gamesCsvUrl: "",
-  playerStatsCsvUrl: ""
+
+  teamsCsvUrl: "https://docs.google.com/spreadsheets/d/1VpIZEV75l0yHBrkPZYnhlT88xkjGYHvwMakQ8cpwMxo/edit?usp=sharing",
+  gamesCsvUrl: "https://docs.google.com/spreadsheets/d/1VpIZEV75l0yHBrkPZYnhlT88xkjGYHvwMakQ8cpwMxo/edit?usp=sharing",
+  playerStatsCsvUrl: "https://docs.google.com/spreadsheets/d/1VpIZEV75l0yHBrkPZYnhlT88xkjGYHvwMakQ8cpwMxo/edit?usp=sharing"
 };

@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10243a">
+  <title>League Central | Basketball League</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#" aria-label="League Central home">
+        <span class="brand-mark">🏀</span>
+        <span><strong id="league-name">LEAGUE CENTRAL</strong><small>COMMUNITY BASKETBALL</small></span>
+      </a>
+      <span class="season-pill" id="season-label">2026 SEASON</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">THE LEAGUE. THE PLAYERS. THE NUMBERS.</p>
+        <h1>Every game<br><span>counts.</span></h1>
+        <p class="hero-copy">Follow the schedule, check box scores, and keep up with the league leaders.</p>
+      </div>
+      <div class="hero-ball" aria-hidden="true">🏀</div>
+    </section>
+
+    <section class="summary-grid" aria-label="League overview">
+      <article class="summary-card"><span class="summary-label">TEAMS</span><strong id="team-count">6</strong><span class="summary-note">in the league</span></article>
+      <article class="summary-card"><span class="summary-label">GAMES PLAYED</span><strong id="games-played">0</strong><span class="summary-note">completed games</span></article>
+      <article class="summary-card"><span class="summary-label">PLAYERS</span><strong id="player-count">0</strong><span class="summary-note">with recorded stats</span></article>
+    </section>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <button class="nav-button active" data-view="schedule">Schedule</button>
+      <button class="nav-button" data-view="players">Player Stats</button>
+      <button class="nav-button" data-view="leaders">Stat Leaders</button>
+      <button class="nav-button" data-view="teams">Teams</button>
+    </nav>
+
+    <div id="data-status" class="data-status" role="status">Loading league data…</div>
+
+    <section class="view active" id="view-schedule">
+      <div class="section-heading">
+        <div><p class="eyebrow">SEASON FIXTURES</p><h2>Weekly schedule</h2></div>
+        <label class="select-wrap">Select week
+          <select id="week-select" aria-label="Select week"></select>
+        </label>
+      </div>
+      <div id="schedule-list" class="schedule-list"></div>
+    </section>
+
+    <section class="view" id="view-players">
+      <div class="section-heading"><div><p class="eyebrow">SEASON TOTALS</p><h2>Player statistics</h2></div></div>
+      <div class="table-tools">
+        <input id="player-search" type="search" placeholder="Search player or team…" aria-label="Search players">
+        <select id="player-sort" aria-label="Sort players">
+          <option value="points">Sort: Total points</option>
+          <option value="rebounds">Sort: Total rebounds</option>
+          <option value="ppg">Sort: Points per game</option>
+          <option value="rpg">Sort: Rebounds per game</option>
+          <option value="name">Sort: Player name</option>
+        </select>
+      </div>
+      <div class="table-wrap"><table><thead><tr><th>PLAYER</th><th>TEAM</th><th>GP</th><th>PTS</th><th>REB</th><th>PPG</th><th>RPG</th></tr></thead><tbody id="players-body"></tbody></table></div>
+    </section>
+
+    <section class="view" id="view-leaders">
+      <div class="section-heading"><div><p class="eyebrow">WHO'S SETTING THE PACE?</p><h2>Stat leaders</h2></div></div>
+      <div class="leader-grid">
+        <article class="leader-panel"><div class="panel-title"><span class="panel-icon">🔥</span><div><h3>Scoring leaders</h3><p>Most total points</p></div></div><div id="points-leaders"></div></article>
+        <article class="leader-panel"><div class="panel-title"><span class="panel-icon">💪</span><div><h3>Rebounding leaders</h3><p>Most total rebounds</p></div></div><div id="rebound-leaders"></div></article>
+      </div>
+    </section>
+
+    <section class="view" id="view-teams">
+      <div class="section-heading"><div><p class="eyebrow">SIX TEAMS. ONE LEAGUE.</p><h2>Teams</h2></div></div>
+      <div id="teams-grid" class="teams-grid"></div>
+    </section>
+  </main>
+
+  <footer><span>LEAGUE CENTRAL</span><span>Community basketball • Stats updated from the league spreadsheet</span></footer>
+
+  <dialog id="game-dialog" class="game-dialog">
+    <div class="dialog-top"><div><p class="eyebrow" id="dialog-week">WEEK</p><h2 id="dialog-title">Game box score</h2></div><button class="close-dialog" id="close-dialog" aria-label="Close">×</button></div>
+    <div id="dialog-score" class="dialog-score"></div>
+    <div class="boxscore-columns">
+      <div><h3 id="home-team-heading">Home team</h3><div class="table-wrap"><table><thead><tr><th>PLAYER</th><th>PTS</th><th>REB</th></tr></thead><tbody id="home-stats"></tbody></table></div></div>
+      <div><h3 id="away-team-heading">Away team</h3><div class="table-wrap"><table><thead><tr><th>PLAYER</th><th>PTS</th><th>REB</th></tr></thead><tbody id="away-stats"></tbody></table></div></div>
+    </div>
+  </dialog>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
